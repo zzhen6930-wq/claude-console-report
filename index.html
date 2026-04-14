@@ -437,8 +437,8 @@ print(session.id)  # 后续可用 wake(session_id) 恢复断点</code></pre>
 
     <h4>Claude Console 的实际表现</h4>
     <div class="step-box">
-      <div class="step-num">创建阶段（约 2 小时）</div>
-      <p>PM 在 Workbench 中调试 System Prompt，描述竞品分析维度；在「代理人」配置中选择 Web Fetch + Text Editor + Slack MCP Connector；在「凭证库」完成 Slack OAuth 授权（点击按钮，跳转 Slack 授权页，完成即可，无需任何代码）。</p>
+      <div class="step-num">创建阶段（约 30 分钟）</div>
+      <p>在 Quickstart 中选择 Field monitor 模板 → 配置工具（Web Fetch + Text Editor + Slack MCP）→ 在「凭证库」完成 Slack OAuth 授权（点击授权按钮即可）→ 在 Workbench 中微调 System Prompt（竞品分析维度：功能点、定价策略、用户评价）。</p>
     </div>
     <div class="step-box">
       <div class="step-num">运行阶段（全自动）</div>
@@ -449,7 +449,7 @@ print(session.id)  # 后续可用 wake(session_id) 恢复断点</code></pre>
       <p>每天节省 1-2 小时，竞品动态覆盖率从约 60% 提升到 100%，PM 在 Slack 里直接查看每日竞品简报。</p>
     </div>
 
-    <div class="verdict">📌 <b>对比结论</b>：同样需求用自建方案实现需要：搭建爬虫服务 + 数据库 + LLM 调用逻辑 + Slack Webhook + 运维，保守估计 1-2 周开发时间。Console 将这个过程压缩到 2 小时，印证了「工程复杂度与业务配置分离」的判断。</div>
+    <div class="verdict">📌 <b>对比结论</b>：同样需求用自建方案实现需要：搭建爬虫服务 + 数据库 + LLM 调用逻辑 + Slack Webhook + 运维，保守估计 1-2 周开发时间。Console 将这个过程压缩到 30 分钟，印证了「工程复杂度与业务配置分离」的判断。</div>
   </div>
 
   <!-- Case 2 -->
@@ -523,7 +523,7 @@ print(session.id)  # 后续可用 wake(session_id) 恢复断点</code></pre>
     <h4>Case 总结</h4>
     <table>
       <tr><th>Case</th><th>对应核心功能</th><th>关键表现</th><th>结论</th></tr>
-      <tr><td><b>竞品监控 Agent</b></td><td>Agent 创建机制 + MCP</td><td>2 小时完成创建，全自动每日执行</td><td>Console 将自建成本从 1-2 周压缩到 2 小时</td></tr>
+      <tr><td><b>竞品监控 Agent</b></td><td>Agent 创建机制 + MCP</td><td>30 分钟完成创建，全自动每日执行</td><td>Console 将自建成本从 1-2 周压缩到 30 分钟</td></tr>
       <tr><td><b>代码重构 Agent</b></td><td>Session 管理 + 断点恢复</td><td>跨 3 天、500 个文件，中断可恢复</td><td>Session 机制使长周期任务首次具备生产可行性</td></tr>
       <tr><td><b>智能客服 Agent</b></td><td>Skills 封装 + 凭证安全</td><td>话术一致、提示注入防御有效</td><td>Skills 保证行为一致性，Vault 保证安全合规</td></tr>
     </table>
